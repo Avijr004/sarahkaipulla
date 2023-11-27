@@ -1,6 +1,7 @@
 import asyncio
 
 from pyrogram import filters
+from pyrogram.enums import ChatType
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from youtubesearchpython.__future__ import VideosSearch
