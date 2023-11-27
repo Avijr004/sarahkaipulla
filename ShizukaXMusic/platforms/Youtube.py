@@ -243,7 +243,7 @@ class YouTubeAPI:
             link = self.base + link
         loop = asyncio.get_running_loop()
 
-        def audio_dl():
+        def song_audio_dl(title, link, format_id):
             ydl_optssx = {
                 "format": "bestaudio/best",
                 "outtmpl": "downloads/%(id)s.%(ext)s",
@@ -260,7 +260,7 @@ class YouTubeAPI:
             x.download([link])
             return xyz
 
-        def video_dl():
+        def song_video_dl(title, link, format_id):
             ydl_optssx = {
                 "format": "(bestvideo[height<=?720][width<=?1280][ext=mp4])+(bestaudio[ext=m4a])",
                 "outtmpl": "downloads/%(id)s.%(ext)s",
@@ -315,11 +315,11 @@ class YouTubeAPI:
             x.download([link])
 
         if songvideo:
-            await loop.run_in_executor(None, song_video_dl)
+            await loop.run_in_executor(None, song_video_dl, title, link, format_id)
             fpath = f"downloads/{title}.mp4"
             return fpath
         elif songaudio:
-            await loop.run_in_executor(None, song_audio_dl)
+            await loop.run_in_executor(None, song_audio_dl, title, link, format_id)
             fpath = f"downloads/{title}.mp3"
             return fpath
         elif video:
