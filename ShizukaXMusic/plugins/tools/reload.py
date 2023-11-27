@@ -6,7 +6,7 @@ from pyrogram.enums import ChatMembersFilter
 from pyrogram.types import CallbackQuery, Message
 
 from ShizukaXMusic import app
-from ShizukaXMusic.core.call import Yukki
+from ShizukaXMusic.core.call import Shizuka
 from ShizukaXMusic.misc import db
 from ShizukaXMusic.utils.database import get_assistant, get_authuser_names, get_cmode
 from ShizukaXMusic.utils.decorators import ActualAdminCB, AdminActual, language
