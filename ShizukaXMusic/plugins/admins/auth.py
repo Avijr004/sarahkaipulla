@@ -84,7 +84,7 @@ async def auth(client, message: Message, _):
 
 
 @app.on_message(
-    filters.command(UNAUTH_COMMAND) & filters.group & ~filters.edited & ~BANNED_USERS
+    filters.command(UNAUTH_COMMAND) & filters.group & ~BANNED_USERS
 )
 @AdminActual
 async def unauthusers(client, message: Message, _):
