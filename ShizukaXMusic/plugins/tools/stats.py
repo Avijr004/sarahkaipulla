@@ -57,7 +57,7 @@ async def stats_global(client, message: Message, _):
 
 
 @app.on_message(
-    filters.command(GSTATS_COMMAND) & filters.group & ~filters.edited & ~BANNED_USERS
+    filters.command(GSTATS_COMMAND) & filters.group & ~BANNED_USERS
 )
 @language
 async def gstats_global(client, message: Message, _):
