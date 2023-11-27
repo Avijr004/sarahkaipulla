@@ -4,6 +4,7 @@ import re
 import yt_dlp
 from pykeyboard import InlineKeyboard
 from pyrogram import filters
+from pyrogram import enums
 from pyrogram.types import (
     InlineKeyboardButton,
     InlineKeyboardMarkup,
@@ -270,7 +271,7 @@ async def song_download_cb(client, CallbackQuery, _):
         await mystic.edit_text(_["song_11"])
         await app.send_chat_action(
             chat_id=CallbackQuery.message.chat.id,
-            action="upload_audio",
+            action = enums.ChatAction.UPLOAD_VIDEO & enums.ChatAction.UPLOAD_AUDIO,
         )
         try:
             await CallbackQuery.edit_message_media(media=med)
