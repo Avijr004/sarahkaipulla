@@ -5,12 +5,12 @@ from pyrogram import filters
 from pyrogram.enums import ChatMembersFilter
 from pyrogram.types import CallbackQuery, Message
 
-from YukkiMusic import app
-from YukkiMusic.core.call import Yukki
-from YukkiMusic.misc import db
-from YukkiMusic.utils.database import get_assistant, get_authuser_names, get_cmode
-from YukkiMusic.utils.decorators import ActualAdminCB, AdminActual, language
-from YukkiMusic.utils.formatters import alpha_to_int, get_readable_time
+from ShizukaXMusic import app
+from ShizukaXMusic.core.call import Yukki
+from ShizukaXMusic.misc import db
+from ShizukaXMusic.utils.database import get_assistant, get_authuser_names, get_cmode
+from ShizukaXMusic.utils.decorators import ActualAdminCB, AdminActual, language
+from ShizukaXMusic.utils.formatters import alpha_to_int, get_readable_time
 from config import BANNED_USERS, adminlist, lyrical
 
 rel = {}
