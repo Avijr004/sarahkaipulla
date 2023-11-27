@@ -57,7 +57,7 @@ class YouTubeAPI:
                 break
             if message.entities:
                 for entity in message.entities:
-                     if entity.type == MessageEntityType.TEXT_LINK:
+                     if entity.type == MessageEntityType.URL:
                         text = message.text or message.caption
                         offset, length = entity.offset, entity.length
                         break
