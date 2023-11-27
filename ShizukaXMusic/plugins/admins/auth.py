@@ -119,7 +119,7 @@ async def unauthusers(client, message: Message, _):
 
 
 @app.on_message(
-    filters.command(AUTHUSERS_COMMAND) & filters.group & ~filters.edited & ~BANNED_USERS
+    filters.command(AUTHUSERS_COMMAND) & filters.group & ~BANNED_USERS
 )
 @language
 async def authusers(client, message: Message, _):
