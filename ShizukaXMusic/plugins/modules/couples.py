@@ -4,7 +4,7 @@ from datetime import datetime
 from pyrogram import filters
 from pyrogram.enums import ChatType
 
-from ShizukaXMusic.utils.database import get_couple, save_couple
+from ShizukaXMusic import app
 
 
 # Date and time
