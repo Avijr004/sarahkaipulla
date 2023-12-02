@@ -31,7 +31,7 @@ today = str(dt()[0])
 tomorrow = str(dt_tom())
 
 
-@pbot.on_message(filters.command(["couple", "couples"]))
+@app.on_message(filters.command(["couple", "couples"]))
 async def couple(_, message):
     if message.chat.type == ChatType.PRIVATE:
         return await message.reply_text("This command only works in groups.")
@@ -40,7 +40,7 @@ async def couple(_, message):
         is_selected = await get_couple(user_id, today)
         if not is_selected:
             list_of_users = []
-            async for i in pbot.get_chat_members(message.chat.id, limit=50):
+            async for i in app.get_chat_members(message.chat.id, limit=50):
                 if not i.user.is_bot:
                     list_of_users.append(i.user.id)
             if len(list_of_users) < 2:
@@ -49,27 +49,27 @@ async def couple(_, message):
             c2_id = random.choice(list_of_users)
             while c1_id == c2_id:
                 c1_id = random.choice(list_of_users)
-            c1_mention = (await pbot.get_users(c1_id)).mention
-            c2_mention = (await pbot.get_users(c2_id)).mention
+            c1_mention = (await app.get_users(c1_id)).mention
+            c2_mention = (await app.get_users(c2_id)).mention
 
             couple_selection_message = f"""**Couple of the day :**
 
 {c1_mention} + {c2_mention} = 😘
 __New couple of the day can be chosen at 12AM {tomorrow}__"""
-            await pbot.send_message(message.chat.id, text=couple_selection_message)
+            await app.send_message(message.chat.id, text=couple_selection_message)
             couple = {"c1_id": c1_id, "c2_id": c2_id}
             await save_couple(user_id, today, couple)
 
         elif is_selected:
             c1_id = int(is_selected["c1_id"])
             c2_id = int(is_selected["c2_id"])
-            c1_name = (await pbot.get_users(c1_id)).mention
-            c2_name = (await pbot.get_users(c2_id)).mention
+            c1_name = (await app.get_users(c1_id)).mention
+            c2_name = (await app.get_users(c2_id)).mention
             couple_selection_message = f"""Couple of the day :
 
 {c1_name} + {c2_name} = 😘
 __New couple of the day can be chosen at 12AM {tomorrow}__"""
-            await pbot.send_message(message.chat.id, text=couple_selection_message)
+            await app.send_message(message.chat.id, text=couple_selection_message)
     except Exception as e:
         print(e)
         await message.reply_text(e)
