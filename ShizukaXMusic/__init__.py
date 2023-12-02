@@ -3,7 +3,7 @@ from ShizukaXMusic.core.dir import dirr
 from ShizukaXMusic.core.git import git
 from ShizukaXMusic.core.userbot import Userbot
 from ShizukaXMusic.misc import dbb, heroku, sudo
-
+from pyrogram import Client
 from .logging import LOGGER
 
 # Directories
@@ -23,7 +23,7 @@ sudo()
 
 # Bot Client
 app = ShizukaBot()
-pbot = ShizukaBot(Client)
+pbot = ShizukaBot()
 
 # Assistant Client
 userbot = Userbot()
