@@ -23,7 +23,7 @@ sudo()
 
 # Bot Client
 app = ShizukaBot()
-pbot = ShizukaBot()
+pbot = Client("ShizukaXMusic", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
 
 # Assistant Client
 userbot = Userbot()
