@@ -71,7 +71,7 @@ __New couple of the day can be chosen at 12AM {tomorrow}__"""
                        ]
                    
             await message.reply_photo( 
-                {random.choice(photo=photo_url)}
+                {random.choice(photo_url)}
             )    
             c1_id = int(is_selected["c1_id"])
             c2_id = int(is_selected["c2_id"])
