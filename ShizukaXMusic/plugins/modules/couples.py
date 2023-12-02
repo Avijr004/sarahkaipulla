@@ -36,8 +36,8 @@ async def couple(_, message):
     if message.chat.type == ChatType.PRIVATE:
         return await message.reply_text("This command only works in groups.")
     try:
-        chat_id = message.chat.id
-        is_selected = await get_couple(chat_id, today)
+        user_id = message.chat.id
+        is_selected = await get_couple(user_id, today)
         if not is_selected:
             list_of_users = []
             async for i in pbot.get_chat_members(message.chat.id, limit=50):
@@ -58,7 +58,7 @@ async def couple(_, message):
 __New couple of the day can be chosen at 12AM {tomorrow}__"""
             await pbot.send_message(message.chat.id, text=couple_selection_message)
             couple = {"c1_id": c1_id, "c2_id": c2_id}
-            await save_couple(chat_id, today, couple)
+            await save_couple(user_id, today, couple)
 
         elif is_selected:
             c1_id = int(is_selected["c1_id"])
