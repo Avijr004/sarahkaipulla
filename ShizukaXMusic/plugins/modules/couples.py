@@ -52,7 +52,7 @@ async def couple(_, message):
             c1_mention = (await app.get_users(c1_id)).mention
             c2_mention = (await app.get_users(c2_id)).mention
 
-            couple_selection_message = f"""**Couple of the day :**
+            couple_selection_message = f"""**https://telegra.ph/file/66a26cca7186e4f21629d.jpg**
 
 {c1_mention} + {c2_mention} = 😘
 __New couple of the day can be chosen at 12AM {tomorrow}__"""
