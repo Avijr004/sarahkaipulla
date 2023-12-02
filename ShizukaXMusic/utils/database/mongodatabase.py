@@ -14,7 +14,7 @@ usersdb = mongodb.tgusersdb
 playlistdb = mongodb.playlist
 blockeddb = mongodb.blockedusers
 privatedb = mongodb.privatechats
-
+coupledb = db.couple
 
 # Playlist
 
@@ -425,3 +425,33 @@ async def remove_banned_user(user_id: int):
     if not is_gbanned:
         return
     return await blockeddb.delete_one({"user_id": user_id})
+
+
+# couple
+
+
+async def _get_lovers(user_id: int):
+    lovers = await coupledb.find_one({"user_id": user_id})
+    if lovers:
+        lovers = lovers["couple"]
+    else:
+        lovers = {}
+    return lovers
+
+
+async def get_couple(user_id: int, date: str):
+    lovers = await _get_lovers(user_id)
+    if date in lovers:
+        return lovers[date]
+    else:
+        return False
+
+
+async def save_couple(user_id: int, date: str, couple: dict):
+    lovers = await _get_lovers(user_id)
+    lovers[date] = couple
+    await coupledb.update_one(
+        {"user_id": user_id},
+        {"$set": {"couple": lovers}},
+        upsert=True,
+    )
