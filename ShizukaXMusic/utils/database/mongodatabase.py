@@ -14,7 +14,7 @@ usersdb = mongodb.tgusersdb
 playlistdb = mongodb.playlist
 blockeddb = mongodb.blockedusers
 privatedb = mongodb.privatechats
-coupledb = db.couple
+coupledb = mongodb.couple
 
 # Playlist
 
