@@ -67,7 +67,7 @@ __New couple of the day can be chosen at 12AM {tomorrow}__"""
                          " **https://telegra.ph/file/a3ba3cf91dc6f3f29bc9a.jpg** ",
                          " **https://telegra.ph/file/8bad877b564bca0dc331a.jpg** ",
                          " **https://telegra.ph/file/048633ac735cce7eb0886.jpg** ",
-                         " **https://telegra.ph/file/7c9a0debcb09fa4444753.jpg** 
+                         " **https://telegra.ph/file/7c9a0debcb09fa4444753.jpg** "
                        ]
                    
             await message.reply_photo( 
