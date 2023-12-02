@@ -61,6 +61,8 @@ __New couple of the day can be chosen at 12AM {tomorrow}__"""
             await save_couple(user_id, today, couple)
 
         elif is_selected:
+            photo_url = "https://telegra.ph/file/66a26cca7186e4f21629d.jpg"
+            await message.reply_photo(photo=photo_url)
             c1_id = int(is_selected["c1_id"])
             c2_id = int(is_selected["c2_id"])
             c1_name = (await app.get_users(c1_id)).mention
