@@ -70,7 +70,7 @@ __New couple of the day can be chosen at 12AM {tomorrow}__"""
                          "https://telegra.ph/file/7c9a0debcb09fa4444753.jpg"
                        ]
                    
-                return await message.reply_photo == random.choice(photo=photo_url)
+            await message.reply_photo == f"{random.choice(photo=photo_url)}"
             c1_id = int(is_selected["c1_id"])
             c2_id = int(is_selected["c2_id"])
             c1_name = (await app.get_users(c1_id)).mention
