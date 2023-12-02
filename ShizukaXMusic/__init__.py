@@ -23,6 +23,7 @@ sudo()
 
 # Bot Client
 app = ShizukaBot()
+pbot = ShizukaBot()
 
 # Assistant Client
 userbot = Userbot()
