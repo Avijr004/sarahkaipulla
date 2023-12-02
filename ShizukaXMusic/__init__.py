@@ -3,7 +3,7 @@ from ShizukaXMusic.core.dir import dirr
 from ShizukaXMusic.core.git import git
 from ShizukaXMusic.core.userbot import Userbot
 from ShizukaXMusic.misc import dbb, heroku, sudo
-
+from ShizukaXMusic import config
 from .logging import LOGGER
 
 # Directories
