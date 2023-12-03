@@ -1,4 +1,7 @@
 import random
+import aiofiles
+import aiohttp
+
 from datetime import datetime
 
 from pyrogram import filters
