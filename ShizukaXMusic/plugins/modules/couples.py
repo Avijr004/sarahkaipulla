@@ -73,7 +73,7 @@ __New couple of the day can be chosen at 12AM {tomorrow}__"""
                      " **https://telegra.ph/file/7c9a0debcb09fa4444753.jpg** "
                     ]
                    
-            await app.send_photo(user_id=message.chat.id, photo=photo)
+            await app.send_photo(chat_id=message.chat.id, photo=photo)
             await message.reply_photo(random.coice(photo))
             c1_id = int(is_selected["c1_id"])
             c2_id = int(is_selected["c2_id"])
