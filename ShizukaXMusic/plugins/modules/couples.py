@@ -73,14 +73,14 @@ __New couple of the day can be chosen at 12AM {tomorrow}__"""
                     " **https://telegra.ph/file/7c9a0debcb09fa4444753.jpg** "
                    ]
                    
-            b1_id = (await message.reply_photo(random.choice(love)))     
+            await message.reply_photo(random.choice(love))    
             c1_id = int(is_selected["c1_id"])
             c2_id = int(is_selected["c2_id"])
             c1_name = (await app.get_users(c1_id)).mention
             c2_name = (await app.get_users(c2_id)).mention
             couple_selection_message = f"""Today beauties 🙈🙊
 
-{b1_id} + {c1_name} + {c2_name} = 😘
+{c1_name} + {c2_name} = 😘
 __New couple of the day can be chosen at 12AM {tomorrow}__"""
             await app.send_message(message.chat.id, text=couple_selection_message)
     except Exception as e:
