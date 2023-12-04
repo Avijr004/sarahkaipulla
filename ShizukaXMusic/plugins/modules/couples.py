@@ -64,17 +64,17 @@ __New couple of the day can be chosen at 12AM {tomorrow}__"""
             await save_couple(user_id, today, couple)
 
         elif is_selected:
-            photo = [" **https://telegra.ph/file/66a26cca7186e4f21629d.jpg** ",
-                     " **https://telegra.ph/file/afa3b15a82cc655ee8d7d.jpg** ",
-                     " **https://telegra.ph/file/332f284b35e07babcd58a.jpg** ",
-                     " **https://telegra.ph/file/a3ba3cf91dc6f3f29bc9a.jpg** ",
-                     " **https://telegra.ph/file/8bad877b564bca0dc331a.jpg** ",
-                     " **https://telegra.ph/file/048633ac735cce7eb0886.jpg** ",
-                     " **https://telegra.ph/file/7c9a0debcb09fa4444753.jpg** "
-                    ]
+            photo_url = [" **https://telegra.ph/file/66a26cca7186e4f21629d.jpg** ",
+                         " **https://telegra.ph/file/afa3b15a82cc655ee8d7d.jpg** ",
+                         " **https://telegra.ph/file/332f284b35e07babcd58a.jpg** ",
+                         " **https://telegra.ph/file/a3ba3cf91dc6f3f29bc9a.jpg** ",
+                         " **https://telegra.ph/file/8bad877b564bca0dc331a.jpg** ",
+                         " **https://telegra.ph/file/048633ac735cce7eb0886.jpg** ",
+                         " **https://telegra.ph/file/7c9a0debcb09fa4444753.jpg** "
+                        ]
                    
          
-            await message.reply_photo(random.choice(photo))
+            await message.reply_photo(random.choice(photo_url))
             c1_id = int(is_selected["c1_id"])
             c2_id = int(is_selected["c2_id"])
             c1_name = (await app.get_users(c1_id)).mention
@@ -84,7 +84,7 @@ __New couple of the day can be chosen at 12AM {tomorrow}__"""
 {c1_name} + {c2_name} = 😘
 __New couple of the day can be chosen at 12AM {tomorrow}__"""
             await app.send_message(message.chat.id, text=couple_selection_message)
-            await app.send_photo(message.chat.id, photo=photo)
+            await app.send_photo(message.chat.id, photo=photo_url)
     except Exception as e:
         print(e)
         await message.reply_text(e)
