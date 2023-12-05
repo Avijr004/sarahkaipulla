@@ -75,7 +75,7 @@ __New couple of the day can be chosen at 12AM {tomorrow}__"""
                         ]
                    
          
-            await message.reply_photo(choice.RANDOM(photo_url))
+            await message.reply_photo(photo=choice.RANDOM)
             c1_id = int(is_selected["c1_id"])
             c2_id = int(is_selected["c2_id"])
             c1_name = (await app.get_users(c1_id)).mention
