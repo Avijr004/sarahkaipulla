@@ -44,6 +44,9 @@ async def couple(_, message):
         is_selected = await get_couple(user_id, today)
         if not is_selected:
             list_of_users = []
+            images = [image for image in os.listdir("kaipulla") if image.endswith((".jpg", ".jpeg", ".png"))]
+            random_image = random.choice(images)
+            await message.reply_photo(f"coupple/{random_image}")
             async for i in app.get_chat_members(message.chat.id, limit=50):
                 if not i.user.is_bot:
                     list_of_users.append(i.user.id)
@@ -66,7 +69,6 @@ __New couple of the day can be chosen at 12AM {tomorrow}__"""
 
         elif is_selected:
             
-            await message.reply_photo(photo=random.choice)
             c1_id = int(is_selected["c1_id"])
             c2_id = int(is_selected["c2_id"])
             c1_name = (await app.get_users(c1_id)).mention
