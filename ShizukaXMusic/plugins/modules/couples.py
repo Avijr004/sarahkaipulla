@@ -44,7 +44,7 @@ async def couple(_, message):
         is_selected = await get_couple(user_id, today)
         if not is_selected:
             list_of_users = []
-            images = [image for image in os.listdir("kaipulla") if image.endswith((".jpg", ".jpeg", ".png"))]
+            images = [image for image in os.listdir("image") if image.endswith((".jpg", ".jpeg", ".png"))]
             random_image = random.choice(images)
             await message.reply_photo(f"coupple/{random_image}")
             async for i in app.get_chat_members(message.chat.id, limit=50):
