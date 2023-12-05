@@ -3,7 +3,7 @@ import aiofiles
 import aiohttp
 
 from datetime import datetime
-from pyrogram import RANDOM
+from ShizukaXMusic import RANDOM
 
 from pyrogram import filters
 from pyrogram.enums import ChatType
