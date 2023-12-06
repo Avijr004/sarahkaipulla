@@ -52,8 +52,8 @@ async def couple(_, message):
             if len(list_of_users) < 2:
                 return await message.reply_text("Not enough users")
                 return await message.reply_photo(
-                    photo=random.choice(KAI_IMG_URL),
-                
+                    photo=random.choice(KAI_IMG_URL)
+                )
             c1_id = random.choice(list_of_users)
             c2_id = random.choice(list_of_users)
             while c1_id == c2_id:
