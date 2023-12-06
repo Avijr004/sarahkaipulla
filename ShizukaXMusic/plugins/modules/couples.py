@@ -50,12 +50,12 @@ async def couple(_, message):
                     list_of_users.append(i.user.id)
             if len(list_of_users) < 2:
                 return await message.reply_text("Not enough users")
-                pics = ["https://telegra.ph/file/8bad877b564bca0dc331a.jpg",
+                LOVE = ["https://telegra.ph/file/8bad877b564bca0dc331a.jpg",
                         "https://telegra.ph/file/b9742bda21212499cc98d.jpg",
                         "https://telegra.ph/file/048633ac735cce7eb0886.jpg",
                         "https://telegra.ph/file/7c9a0debcb09fa4444753.jpg"
                        ]
-            kai = choice(pics)
+            kai = choice(LOVE)
             await message.reply_photo(kai, ...)
             c1_id = random.choice(list_of_users)
             c2_id = random.choice(list_of_users)
