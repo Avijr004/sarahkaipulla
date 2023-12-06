@@ -2,9 +2,10 @@ import random
 import os
 import aiofiles
 import aiohttp
+import config
 
+from config import KAI_IMG_URL
 from datetime import datetime
-from random import choice
 
 from pyrogram import filters
 from pyrogram.enums import ChatType
@@ -50,13 +51,9 @@ async def couple(_, message):
                     list_of_users.append(i.user.id)
             if len(list_of_users) < 2:
                 return await message.reply_text("Not enough users")
-                LOVE = ["https://telegra.ph/file/8bad877b564bca0dc331a.jpg",
-                        "https://telegra.ph/file/b9742bda21212499cc98d.jpg",
-                        "https://telegra.ph/file/048633ac735cce7eb0886.jpg",
-                        "https://telegra.ph/file/7c9a0debcb09fa4444753.jpg"
-                       ]
-            kai = choice(LOVE)
-            await message.reply_photo(kai, ...)
+                return await message.reply_photo(
+                    photo=random.choice(KAI_IMG_URL),
+                
             c1_id = random.choice(list_of_users)
             c2_id = random.choice(list_of_users)
             while c1_id == c2_id:
