@@ -55,8 +55,8 @@ async def couple(_, message):
                         "https://telegra.ph/file/048633ac735cce7eb0886.jpg",
                         "https://telegra.ph/file/7c9a0debcb09fa4444753.jpg"
                        ]
-                kai = choice(pics)
-                       await message.reply_photo(kai)
+            kai = choice(pics)
+            await message.reply_photo(kai, ...)
             c1_id = random.choice(list_of_users)
             c2_id = random.choice(list_of_users)
             while c1_id == c2_id:
