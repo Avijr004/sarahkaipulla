@@ -4,6 +4,7 @@ import aiofiles
 import aiohttp
 
 from datetime import datetime
+from directory import RANDOM
 
 from pyrogram import filters
 from pyrogram.enums import ChatType
@@ -45,8 +46,8 @@ async def couple(_, message):
         if not is_selected:
             list_of_users = []
             images = [image for image in os.listdir("image") if image.endswith((".jpg", ".jpeg", ".png"))]
-            random_image = random.choice(images)
-            await message.reply_photo(f"coupple/{random_image}")
+            random_image = choice.RANDOM(images)
+            await message.reply_photo(f"couple/{random_image}")
             async for i in app.get_chat_members(message.chat.id, limit=50):
                 if not i.user.is_bot:
                     list_of_users.append(i.user.id)
@@ -78,7 +79,7 @@ __New couple of the day can be chosen at 12AM {tomorrow}__"""
 {c1_name} + {c2_name} = 😘
 __New couple of the day can be chosen at 12AM {tomorrow}__"""
             await app.send_message(message.chat.id, text=couple_selection_message)
-            await app.send_photo(message.chat.id, photo=image)
+            await app.send_photo(message.chat.id, photo=images)
             image_path = os.path.join(image)
     except Exception as e:
         print(e)
