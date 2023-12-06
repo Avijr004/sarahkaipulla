@@ -41,6 +41,9 @@ tomorrow = str(dt_tom())
 async def couple(_, message):
     if message.chat.type == ChatType.PRIVATE:
         return await message.reply_text("This command only works in groups.")
+        return await message.reply_photo(
+            photo=random.choice(KAI_IMG_URL)
+        )
     try:
         user_id = message.chat.id
         is_selected = await get_couple(user_id, today)
@@ -51,9 +54,6 @@ async def couple(_, message):
                     list_of_users.append(i.user.id)
             if len(list_of_users) < 2:
                 return await message.reply_text("Not enough users")
-                return await message.reply_photo(
-                    photo=random.choice(KAI_IMG_URL)
-                )
                 await message.reply_photo(
                     photo=random.choice(START_IMG_URL)
                 )
