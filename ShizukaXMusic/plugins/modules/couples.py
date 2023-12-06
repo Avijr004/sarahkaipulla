@@ -4,7 +4,7 @@ import aiofiles
 import aiohttp
 
 from datetime import datetime
-from image import RANDOM
+from random import choice
 
 from pyrogram import filters
 from pyrogram.enums import ChatType
@@ -45,14 +45,18 @@ async def couple(_, message):
         is_selected = await get_couple(user_id, today)
         if not is_selected:
             list_of_users = []
-            images = [image for image in os.listdir("image") if image.endswith((".jpg", ".jpeg", ".png"))]
-            random_image = choice.RANDOM(images)
-            await message.reply_photo(random_image)
             async for i in app.get_chat_members(message.chat.id, limit=50):
                 if not i.user.is_bot:
                     list_of_users.append(i.user.id)
             if len(list_of_users) < 2:
                 return await message.reply_text("Not enough users")
+                pics = ["https://telegra.ph/file/8bad877b564bca0dc331a.jpg",
+                        "https://telegra.ph/file/b9742bda21212499cc98d.jpg",
+                        "https://telegra.ph/file/048633ac735cce7eb0886.jpg",
+                        "https://telegra.ph/file/7c9a0debcb09fa4444753.jpg"
+                       ]
+                kai = choice(pics)
+                       await message.reply_photo(kai, ...)
             c1_id = random.choice(list_of_users)
             c2_id = random.choice(list_of_users)
             while c1_id == c2_id:
@@ -79,8 +83,7 @@ __New couple of the day can be chosen at 12AM {tomorrow}__"""
 {c1_name} + {c2_name} = 😘
 __New couple of the day can be chosen at 12AM {tomorrow}__"""
             await app.send_message(message.chat.id, text=couple_selection_message)
-            await app.send_photo(message.chat.id, photo=images)
-            image_path = os.path.join(image)
+            await app.send_photo(message.chat.id, photo=kai)
     except Exception as e:
         print(e)
         await message.reply_text(e)
