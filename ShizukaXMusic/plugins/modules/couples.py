@@ -54,6 +54,9 @@ async def couple(_, message):
                 return await message.reply_photo(
                     photo=random.choice(KAI_IMG_URL)
                 )
+                await message.reply_photo(
+                    photo=random.choice(START_IMG_URL)
+                )
             c1_id = random.choice(list_of_users)
             c2_id = random.choice(list_of_users)
             while c1_id == c2_id:
@@ -78,10 +81,7 @@ __New couple of the day can be chosen at 12AM {tomorrow}__"""
             couple_selection_message = f"""Today beauties 🙈🙊
 
 {c1_name} + {c2_name} = 😘
-__New couple of the day can be chosen at 12AM {tomorrow}__"""     
-        await message.reply_photo(
-            photo=random.choice(START_IMG_URL)
-        )        
+__New couple of the day can be chosen at 12AM {tomorrow}__"""             
             await app.send_message(message.chat.id, text=couple_selection_message)
     except Exception as e:
         print(e)
