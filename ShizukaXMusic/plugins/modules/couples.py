@@ -81,8 +81,8 @@ __New couple of the day can be chosen at 12AM {tomorrow}__"""
 __New couple of the day can be chosen at 12AM {tomorrow}__"""
             
         await message.reply_photo(
-            photo=random.choice(START_IMG_URL),
-                
+            photo=random.choice(START_IMG_URL)
+        )        
             await app.send_message(message.chat.id, text=couple_selection_message)
     except Exception as e:
         print(e)
